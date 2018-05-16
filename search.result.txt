@@ -1,0 +1,13 @@
+jsoup Java HTML Parser, with best of DOM, CSS, and jquery ==> https://jsoup.org/
+Cookbook ==> https://jsoup.org/cookbook/
+API Reference ==> https://jsoup.org/apidocs/
+Introduction ==> https://jsoup.org/cookbook/introduction/
+Try jsoup ==> https://try.jsoup.org/
+Download ==> https://jsoup.org/download
+Use selector-syntax to find ... ==> https://jsoup.org/cookbook/extracting-data/selector-syntax
+jsoup - Wikipedia ==> https://en.wikipedia.org/wiki/Jsoup
+Maven Repository: org.jsoup » jsoup ==> https://mvnrepository.com/artifact/org.jsoup/jsoup
+Parsing HTML in Java with Jsoup | Baeldung ==> http://www.baeldung.com/java-with-jsoup
+jsoup Tutorial - Tutorialspoint ==> https://www.tutorialspoint.com/jsoup/
+Learn Jsoup Tutorial - javatpoint ==> https://www.javatpoint.com/jsoup-tutorial
+jsoup HTML Parsing Library for Java Developers - Oracle ==> https://www.oracle.com/corporate/features/jsoup-html-parsing-library.html
