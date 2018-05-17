@@ -14,7 +14,15 @@ public class Google {
 
   public static void main(String[] args) throws IOException {
 
-    String query = "jsoup";
+    toText("jsoup");
+
+    toCSV("jsoup");
+
+    toConsole("jsoup");
+
+  }
+
+  private static void toText(String query) throws IOException{
     Document doc = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(query, "UTF-8")).get();
 
     // In case of Google block this code, use the real USER_AGENT to get oer this problem
@@ -31,5 +39,38 @@ public class Google {
     }
 
     file.close();
+  }
+
+  private static void toCSV(String query) throws IOException{
+    Document doc = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(query, "UTF-8")).get();
+    // In case of Google block this code, use the real USER_AGENT to get oer this problem
+    //Document doc = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(query, "UTF-8")).userAgent(USER_AGENT).get();
+
+    final PrintWriter file = new PrintWriter("search.result.csv");
+
+    file.write("Title; URL\n");
+
+    for(Element result : doc.select("h3.r a")) {
+      String title = result.text();
+      String url = result.attr("href");
+
+      file.write(title + "; " + url + "\n");
+    }
+
+    file.close();
+  }
+
+  private static void toConsole(String query) throws IOException{
+    Document doc = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(query, "UTF-8")).get();
+
+    // In case of Google block this code, use the real USER_AGENT to get oer this problem
+    //Document doc = Jsoup.connect("https://www.google.com/search?q=" + URLEncoder.encode(query, "UTF-8")).userAgent(USER_AGENT).get();
+
+    for(Element result : doc.select("h3.r a")) {
+      String title = result.text();
+      String url = result.attr("href");
+
+      System.out.println(title + " ==> " + url);
+    }
   }
 }
